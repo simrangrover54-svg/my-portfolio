@@ -1,0 +1,258 @@
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0d0f15;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 60px;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-links a {
+  color: #c2c2c2;
+  margin-left: 30px;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.nav-links a:hover {
+  color: #50b7ff;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80vh;
+  padding: 0 80px;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding: 35px;
+  border-radius: 18px;
+  max-width: 500px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-role {
+  font-size: 1.4rem;
+  margin: 10px 0 20px;
+  font-weight: 400;
+  color: #50b7ff;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  color: #d9d9d9;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 380px;
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(80,183,255,0.5));
+}
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+.projects {
+  padding: 50px 80px 100px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 45px;
+  margin-top: 100px;
+}
+
+.glow {
+  text-shadow: 0 0 12px rgba(80,183,255,0.7);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.project-item {
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  text-align: center;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  transition: .25s;
+  cursor: pointer;
+}
+
+.project-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 14px rgba(80,183,255,0.7);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about {
+  padding: 50px 120px;
+  text-align: center;
+  color: #d8d8d8;
+  line-height: 1.6rem;
+  font-size: 1.05rem;
+}
+.about-text {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  color: #d0d0d0;
+  line-height: 1.7rem;
+}
+.about-card {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 35px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(80,183,255,0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.contact a {
+  color: #50b7ff;
+  text-decoration: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  font-size: .9rem;
+  color: #666;
+}
+
+/* =========================
+   VISUAL BACKGROUND EFFECTS
+========================= */
+
+/* flowing neon grid */
+.neon-background {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+      135deg,
+      rgba(0, 140, 255, 0.25),
+      rgba(0, 0, 0, 0.6),
+      rgba(140, 0, 200, 0.25)
+    );
+  background-size: 200% 200%;
+  animation: neonFlow 9s linear infinite;
+  filter: blur(1px);
+  z-index: -3;
+}
+
+/* glowing ambient overlay */
+.neon-glow {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 200, 255, 0.18),
+    transparent 70%
+  );
+  z-index: -2;
+  pointer-events: none;
+  filter: blur(40px);
+  opacity: 0.55;
+}
+
+/* animation */
+@keyframes neonFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+.cursor-spotlight {
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(80,183,255,0.6), transparent 70%);
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  opacity: 0.6;
+}
+.tech-stack, .learning {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.tech-stack span, .learning span {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(80,183,255,0.4);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #cfeaff;
+  backdrop-filter: blur(6px);
+}
